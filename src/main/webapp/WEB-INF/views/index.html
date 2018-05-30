@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Form</title>
+</head>
+  <body>
+  <form th:object="${user}" method="post">
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td><input title="name" th:field="*{name}"/></td>
+        <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+      </tr>
+        <tr>
+            <td>Age:</td>
+          <td><input title="age" th:field="*{age}"/></td>
+          <td th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Name Error</td>
+        </tr>
+      <tr>
+        <td>
+          <button type="submit">Submit</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <h1>Tiếng việt giáo sư bùi hiền</h1>
+  </body>
+</html>
+
+
